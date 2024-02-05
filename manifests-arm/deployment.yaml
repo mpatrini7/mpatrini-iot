@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mpatrini-playground
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mpatrini-playground
+  template:
+    metadata:
+      labels:
+        app: mpatrini-playground
+    spec:
+      containers:
+        - name: mpatrini-playground
+          image: mpatrini7/playground:v1
+          ports:
+          - containerPort: 8888
